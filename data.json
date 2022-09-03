@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "gender": "male",
+        "contact": "(283) 408-9521",
+        "photoURL": "https://randomuser.me/api/portraits/men/13.jpg",
+        "address": "2361 Dane St",
+        "name": "Bob Cooper"
+    },
+    {
+        "id": "2",
+        "gender": "female",
+        "contact": "(690) 770-6998",
+        "photoURL": "https://randomuser.me/api/portraits/women/34.jpg",
+        "address": "9815 W Gray St",
+        "name": "Joann Burke"
+    },
+    {
+        "id": "3",
+        "gender": "female",
+        "contact": "(729) 980-0898",
+        "photoURL": "https://randomuser.me/api/portraits/women/31.jpg",
+        "address": "4245 First Street",
+        "name": "Danielle Perry"
+    }
+]
