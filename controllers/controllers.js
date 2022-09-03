@@ -56,23 +56,23 @@ module.exports.saveAUser = async (req, res) => {
     if (err) {
       return res.status(400).json({
         success: false,
-        error: "400 Bad Request",
+        error: "Something Went wrong",
       });
     } else {
       req.body.id = req.body.id ? req.body.id : shortid.generate();
-      const parsedUsers = formParseJson(users);
+      const parsedUsers = parseJsonFromFs(users);
       parsedUsers.push(req.body);
       const allUsers = JSON.stringify(parsedUsers);
       fs.writeFile(userFilePath, allUsers, (err) => {
         if (err) {
           return res.status(400).json({
             success: false,
-            error: "400 Bad Request",
+            error: "Something Went wrong",
           });
         } else {
           res.status(201).json({
             success: true,
-            message: "200 User Saved",
+            message: "User Saved Successfully",
           });
         }
       });
@@ -105,19 +105,7 @@ module.exports.updateUser = (req, res) => {
         }
         return user;
       });
-      fs.writeFile(userFilePath, JSON.stringify(updatedUsers), (err) => {
-        if (err) {
-          return res.status(400).json({
-            success: false,
-            error: "400 Bad Request",
-          });
-        } else {
-          res.status(200).json({
-            success: true,
-            message: "200 User Updated",
-          });
-        }
-      });
+
     }
   });
 };
