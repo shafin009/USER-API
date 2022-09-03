@@ -135,6 +135,14 @@ module.exports.bulkUpdate = async (req, res) => {
             u = user;
           }
         });
+        fs.writeFile(userFilePath, stringified, (err) => {
+          if (err) {
+            return res.status(400).json({
+              success: false,
+              error: "400 Bad Request",
+            });
+          }
+        });
       }
     });
   }
